@@ -9,10 +9,6 @@ export class TodoClient {
     return fetch('/api/todos?filter=' + match, {method: 'GET'}).then(response => response.json() as Promise<Todo[]>)
   }
   
-  getAll(): Promise<Todo[]> {
-    return this.getFiltered('')
-  }
-  
   remove(id: number): Promise<any> {
     return fetch('/api/todos/' + id, {method: 'DELETE'})
   }

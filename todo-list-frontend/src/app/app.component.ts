@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
+import {Component} from '@angular/core';
 import {Todo, TodoService} from "./todo.service";
 import {BehaviorSubject, Observable} from "rxjs";
 

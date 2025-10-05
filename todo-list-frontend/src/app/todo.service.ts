@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 import {TodoClient} from "./todo.client";
 import {fromPromise} from "rxjs/internal-compatibility";
 
@@ -18,10 +18,6 @@ export class TodoService {
   
   getFiltered(match: string): Observable<Todo[]> {
     return fromPromise(this.todoClient.getFiltered(match))
-  }
-
-  getAll(): Observable<Todo[]> {
-    return this.getFiltered('');
   }
 
   remove(id: number): Observable<void> {

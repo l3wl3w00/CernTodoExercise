@@ -7,9 +7,9 @@ public class TodoDto {
         this.priority = priority;
     }
 
-    private int id;
-    private String task;
-    private int priority;
+    private final int id;
+    private final String task;
+    private final int priority;
 
     public int getId() {
         return id;
