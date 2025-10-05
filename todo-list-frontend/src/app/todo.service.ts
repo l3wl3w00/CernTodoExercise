@@ -24,6 +24,13 @@ function removeFromMockData(id: number) {
 })
 export class TodoService {
 
+  getFiltered(match: string) {
+      if (!match) {
+          return this.getAll();
+      }
+    return this.getAll().pipe(map(todos => todos.filter(t => t.task.includes(match))))
+  }
+
   getAll(): Observable<Todo[]> {
     return of(undefined).pipe(delay(2_000), map(() => mockData));
   }
