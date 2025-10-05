@@ -25,9 +25,9 @@ function removeFromMockData(id: number) {
 export class TodoService {
 
   getFiltered(match: string) {
-      if (!match) {
-          return this.getAll();
-      }
+    if (!match) {
+      return this.getAll();
+    }
     return this.getAll().pipe(map(todos => todos.filter(t => t.task.includes(match))))
   }
 
